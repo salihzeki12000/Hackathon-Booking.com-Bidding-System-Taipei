@@ -2,7 +2,7 @@
   background-color: #fff;
 
   &-basic {
-    background-color: #ffd2a2;
+    background-color: #FBD088;
     border-radius: 5px;
     height: 130px;
 
@@ -15,8 +15,16 @@
     margin-top: 10px;
   }
   &-services {
-    background-color: #ffd2a2;
+    background-color: #FBD088;
     border-radius: 5px;
-    height: 250px;
+    height: 300px;
+
+    &-selected {
+      background-color: #fff;
+      height: 250px;
+      margin-top: 10px;
+      padding-left: 10px;
+      padding-top: 5px;
+    }
   }
 }

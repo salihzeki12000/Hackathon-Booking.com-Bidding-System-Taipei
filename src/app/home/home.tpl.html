@@ -1,6 +1,7 @@
 <form clas="home" ng-submit="homeCtrl.search()">
   <div class="row home-basic">
-    <div class="col-sm-4 home-basic-item">
+    <!--<img class="" src="assets/images/step-one.png">-->
+    <div class="col-xs-4 home-basic-item">
       <label>
         Location
       </label>
@@ -11,7 +12,7 @@
         ng-model="homeCtrl.location"
         name="location" required/>
     </div>
-    <div class="col-sm-4 home-basic-item">
+    <div class="col-xs-4 home-basic-item">
       <label>
         Check-in
       </label>
@@ -22,7 +23,7 @@
         ng-model="homeCtrl.date"
         name="location" required/>
     </div>
-    <div class="col-sm-1 home-basic-item">
+    <div class="col-xs-1 home-basic-item">
       <label>
         Days
       </label>
@@ -33,7 +34,7 @@
         ng-model="homeCtrl.days"
         name="location" required/>
     </div>
-    <div class="col-sm-3 home-basic-item">
+    <div class="col-xs-3 home-basic-item">
       <label>
         Budget
       </label>
@@ -47,7 +48,25 @@
   </div>
   <br>
   <div class="row home-services">
-    oohohoh
+    <div class="col-xs-offset-2 col-xs-4">
+      <h4>Please select services</h4>
+      <div ng-repeat="(serviceKey, serviceValue) in homeCtrl.services">
+        <input type="checkbox"
+            ng-model="homeCtrl.services[serviceKey]"
+            ng-click="homeCtrl.selectService(serviceKey)">
+        {{ serviceKey }}
+      </div>
+    </div>
+    <div class="col-xs-4">
+      <h4 class="home-services-selected-title">Selected services</h4>
+      <div class="home-services-selected">
+        <div ng-repeat="service in homeCtrl.servicesSelected">
+          <label>
+            {{ service }}
+          </label>
+        </div>
+      </div>
+    </div>
   </div>
-  <button type="submit" class="col-sm-offset-11 col-sm-1 btn btn-large btn-primary home-btn">Next</button>
+  <button type="submit" class="col-xs-offset-11 col-xs-1 btn btn-large btn-primary home-btn">Next</button>
 </form>
