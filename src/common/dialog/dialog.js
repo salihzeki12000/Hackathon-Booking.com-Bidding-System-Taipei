@@ -13,6 +13,7 @@ import notificationDialogTemplate from 'common/dialog/notificationDialog.tpl';
 import reportWizzardDialogTemplate from 'common/dialog/reportWizzardDialog.tpl';
 import iCloudSyncDescribeModule from 'common/components/descriptions/iCloudSyncDescription';
 import iCloudHelpDescribeModule from 'common/components/descriptions/iCloudHelpDescription';
+import openHotelDialogTemplate from 'common/dialog/openHotelDialog.tpl';
 
 export default angular
   .module('common.dialog', [
@@ -29,5 +30,6 @@ export default angular
     reportWizzardDialogTemplate.name,
     iCloudSyncDescribeModule.name,
     iCloudHelpDescribeModule.name,
+    openHotelDialogTemplate.name,
     moduleDialog.name,
   ]);

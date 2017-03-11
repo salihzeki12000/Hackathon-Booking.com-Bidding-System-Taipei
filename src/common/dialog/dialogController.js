@@ -20,34 +20,4 @@ export default class DialogController {
     // NotificationDialog
     this.notifyContent = this.dialogData.notifyContent;
   }
-
-  editChildConfirm() {
-    if (this.$scope.childName) {
-      this.childService.updateChild(this.dialogData.childId, this.$scope.childName).then((value) => {
-        if (!value.error) {
-          this.$scope.closeThisDialog();
-          this.listenrService.updateMenu();
-          this.listenrService.updateChild();
-        }
-      }, (error) => {
-        this.toastrService.error(`Edit child error, err msg: ${error.error}`);
-      });
-    } else {
-      this.toastrService.warning('Please enter child name :)');
-    }
-  }
-
-  deleteChildConfirm() {
-    this.childService.deleteChild(this.dialogData.childId).then((value) => {
-      if (!value.error) {
-        this.listenrService.updateMenu();
-        this.listenrService.updateChilds();
-        this.$scope.closeThisDialog();
-      } else {
-        this.toastrService.error(`Delte child error, err msg: ${value.error}`);
-      }
-    }, (error) => {
-      this.toastrService.error(`Delte child error, err msg: ${error.error}`);
-    });
-  }
 }

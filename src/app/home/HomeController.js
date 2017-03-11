@@ -16,6 +16,10 @@ export default class HomeController {
     this.location = '';
     this.days = 1;
     this.budget = null;
+  }
 
+  search() {
+    console.log(`data${this.days}`);
+    this.$state.go('cbid');
   }
 }
