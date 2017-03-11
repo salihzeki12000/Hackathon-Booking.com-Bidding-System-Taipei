@@ -1,1 +1,58 @@
-bids data
+<form clas="home" ng-submit="hotelCtrl.acceptBid()">
+  <div class="row home-basic home-basic-hotel">
+    <!--<img class="" src="assets/images/step-one.png">-->
+    <div class="col-xs-4 home-basic-item">
+      <label>
+        Location
+      </label>
+      <input type="text"
+        class="form-control"
+        id="location"
+        placeholder="More places you could ever go"
+        ng-model="hotelCtrl.location"
+        name="location" disabled/>
+    </div>
+    <div class="col-xs-4 home-basic-item">
+      <label>
+        Check-in
+      </label>
+      <input type="date"
+        class="form-control"
+        id="location"
+        placeholder="Check-in date"
+        ng-model="hotelCtrl.date"
+        name="location" disabled/>
+    </div>
+    <div class="col-xs-1 home-basic-item">
+      <label>
+        Days
+      </label>
+      <input type="number"
+        class="form-control"
+        id="location"
+        ng-model="hotelCtrl.days"
+        name="location" disabled/>
+    </div>
+    <div class="col-xs-3 home-basic-item">
+      <label>
+        Budget
+      </label>
+      <input type="number"
+        class="form-control"
+        id="location"
+        placeholder="$ per night & per room"
+        ng-model="hotelCtrl.budget"
+        name="location" disabled/>
+    </div>
+  </div>
+  <br>
+  <div class="row home-services home-services-hotel">
+    <h4 class="col-xs-offset-4 col-xs-5">Business Services</h4>
+    <br>
+    <div class="col-xs-4 cbid-dialog-left" ng-repeat="(key, value) in hotelCtrl.services">
+      <li><label>{{ key }}</label></li>
+    </div>
+  </div>
+  <button class="col-xs-3 btn btn-large btn-primary home-btn">Reject</button>
+  <button type="submit" class="col-xs-offset-6 col-xs-3 btn btn-large btn-primary home-btn">Accept</button>
+</form>

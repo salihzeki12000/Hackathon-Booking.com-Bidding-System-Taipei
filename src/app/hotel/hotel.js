@@ -20,7 +20,7 @@ function ConfigureModule($stateProvider) {
       },
       '@hotel': {
         controller: HotelController,
-        controllerAs: 'HotelCtrl',
+        controllerAs: 'hotelCtrl',
         templateUrl: hotelTemplate.name,
       },
       'header@hotel': {

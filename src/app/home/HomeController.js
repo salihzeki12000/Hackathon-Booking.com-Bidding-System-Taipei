@@ -32,7 +32,17 @@ export default class HomeController {
   }
 
   search() {
-    console.log(`data${this.days}, and data array${this.servicesSelected}`);
+    let tmpDate = this.moment(this.date).unix();
+    let data = {
+      bid_owner: 'ibm',
+      anonymous: true,
+      p_allowed_overbudget: 2,
+      location: this.location,
+      length_stay: this.days,
+      when: tmpDate,
+      requirements: this.servicesSelected,
+    };
+    this.$log.log('HomeController data' + data);
     this.$state.go('cbid');
   }
 
