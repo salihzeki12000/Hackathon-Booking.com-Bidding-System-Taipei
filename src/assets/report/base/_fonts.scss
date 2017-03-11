@@ -1,0 +1,12 @@
+@font-face { @include fontface(sanfranciscotext, sanfranciscotext-light, 300); }
+@font-face { @include fontface(sanfranciscotext, sanfranciscotext-lightitalic, 300, italic); }
+@font-face { @include fontface(sanfranciscotext, sanfranciscotext-regular); }
+@font-face { @include fontface(sanfranciscotext, sanfranciscotext-regularitalic, 400, italic); }
+@font-face { @include fontface(sanfranciscotext, sanfranciscotext-medium, 500); }
+@font-face { @include fontface(sanfranciscotext, sanfranciscotext-mediumitalic, 500, italic); }
+@font-face { @include fontface(sanfranciscotext, sanfranciscotext-semibold, 600); }
+@font-face { @include fontface(sanfranciscotext, sanfranciscotext-semibolditalic, 600, italic); }
+@font-face { @include fontface(sanfranciscotext, sanfranciscotext-bold, 700); }
+@font-face { @include fontface(sanfranciscotext, sanfranciscotext-bolditalic, 700, italic); }
+@font-face { @include fontface(sanfranciscotext, sanfranciscotext-heavy, 900); }
+@font-face { @include fontface(sanfranciscotext, sanfranciscotext-heavyitalic, 900, italic); }

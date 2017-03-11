@@ -1,0 +1,64 @@
+<div class="ftu-dialog">
+  <div class="ftu-dialog__nav">
+    <span class="ftu-dialog__nav__info pull-left">Account Setup</span>
+  </div>
+  <div class="ftu-dialog__header">
+    <span class="ftu-dialog__header__title">Step 2</span>
+    <span ng-show="deviceType.selectedOption.name === 'iOS'" class="ftu-dialog__header__sub-title">iOS iCloud Account</span>
+    <span ng-show="deviceType.selectedOption.name === 'Android'" class="ftu-dialog__header__sub-title">Google Account</span>
+  </div>
+  <form name="addDeviceForm" ng-submit="dialogCtrl.addDeviceConfirm()" class="ftu-dialog__form">
+    <label>Please select child’s device type.</label>
+    <select
+        ng-options="option.name for option in deviceType.availableOptions track by option.id"
+        ng-model="deviceType.selectedOption">
+    </select>
+    <div ng-show="deviceType.selectedOption.name === 'iOS'">
+      <span for="exampleInputEmail1" class="ftu-dialog__form__title">Apple ID</span>
+      <input class="ftu-dialog__form__input" type="email" name="email1" id="text"
+        placeholder="Enter your child's Apple ID" ng-model="email" ng-disabled="isSaving" ng-readonly="dialogCtrl.dialogData.stateMobileAccountEmail"
+      required>
+      <span ng-show="addDeviceForm.email1.$error.required && addDeviceForm.email1.$touched" class="form-validation-msg input-group">Apple ID field is required!</span>
+      <span ng-show="addDeviceForm.email1.$error.email && addDeviceForm.email1.$touched" class="form-validation-msg input-group">Should be an email!</span>
+    </div>
+    <div ng-show="deviceType.selectedOption.name === 'Android'">
+      <span for="exampleInputEmail1" class="ftu-dialog__form__title">Google Email</span>
+      <input class="ftu-dialog__form__input" type="email" name="email" id="text"
+        placeholder="Enter your child's Google Email" ng-model="email" ng-disabled="isSaving" ng-readonly="dialogCtrl.dialogData.stateMobileAccountEmail"
+      required>
+      <span ng-show="addDeviceForm.email.$error.required && addDeviceForm.email.$touched" class="form-validation-msg input-group">Email field is required!</span>
+      <span ng-show="addDeviceForm.email.$error.email && addDeviceForm.email.$touched" class="form-validation-msg input-group">Should be an email!</span>
+    </div>
+
+    <span for="exampleInputPassword1" class="ftu-dialog__form__title">Password</span>
+    <input type="password" name="password" class="ftu-dialog__form__input" id="password"
+      placeholder="Enter your child's Password" ng-model="password" ng-disabled="isSaving"
+    required>
+    <span ng-show="addDeviceForm.password.$error.required && addDeviceForm.password.$touched" class="form-validation-msg input-group">Password field is required!</span>
+    
+    <button type="submit" ng-disabled="addDeviceForm.$invalid || isSaving" class="ftu-dialog__form__button btn btn-info btn-lg">{{buttonText}}</button>
+  </form>
+  <div class="ftu-dialog__footer">
+    <div class="row">
+      <p class="col-sm-6 ftu-dialog__footer__left">
+        Where do I find my child’s iCloud login?
+        <br>
+            &nbsp;&nbsp;Apple ID
+        <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;1.	Go to “Settings” on your child’s iPhone.
+        <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;2.	Tap on “iCloud” and you’ll see the Apple ID.
+        <br>
+        &nbsp;Password
+        <br>
+        &nbsp;&nbsp;You should receive a password when you purchase the iPhone. If the password has since changed, you should get it as soon as possible.
+      </p>
+      <p class="col-sm-6 ftu-dialog__footer__right">
+        •	If you forgot the password, click “Forgot Apple ID or password” here (<a href="https://appleid.apple.com/#!&page=signin" target="_blank">link</a>) to retrieve it.
+        <br>
+        •	Ask your child for it! It’s best to explain to your child the importance of backing up their phone on iCloud in case the phone is damaged, lost or stolen. This is also a great opportunity to talk to your kid about using KidGuard for their safety.
+      </p>
+    </div>
+  </div>
+</div>
+

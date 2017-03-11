@@ -1,0 +1,9 @@
+<div>
+  <p>Enter your child name.</p>
+  <input type="text" ng-model="childName"></input>
+</div>
+<div class="ngdialog-buttons">
+    <button class="ngdialog-button ngdialog-button-secondary"
+      ng-click="closeThisDialog()">No</button>
+    <button class="ngdialog-button ngdialog-button-primary" ng-click="dialogCtrl.editChildConfirm()">Update</button>
+</div>

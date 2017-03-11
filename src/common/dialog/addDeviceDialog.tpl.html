@@ -1,0 +1,51 @@
+<div class="ftu-dialog">
+  <div class="ftu-dialog__nav">
+    <span class="ftu-dialog__nav__info pull-left">Account Setup</span>
+    <span class="ftu-dialog__nav__close pull-right" ng-click="closeThisDialog()"><img src="dist/assets/images/delete.png"></span>
+  </div>
+  <div class="ftu-dialog__header">
+    <span class="ftu-dialog__header__title">Step 2</span>
+    <div ng-hide="dialogCtrl.stateMobileType">
+      <span class="ftu-dialog__header__sub-title">Select child’s device</span>
+      <img ng-src="assets/images/apple.png" class="ftu-phone-avatar"  ng-click="dialogCtrl.selectType('iOS')" ng-class="{ 'ftu-phone-avatar__selected': dialogCtrl.deviceType === 'iOS' }">
+      <img ng-src="assets/images/google.png" class="ftu-phone-avatar" ng-click="dialogCtrl.selectType('Android')" ng-class="{ 'ftu-phone-avatar__selected': dialogCtrl.deviceType === 'Android' }">
+    </div>
+    <div ng-show="dialogCtrl.stateMobileType">
+      <span ng-show="dialogCtrl.stateMobileType === 'iOS'" class="ftu-dialog__header__sub-title">iOS iCloud Account</span>
+      <span ng-show="dialogCtrl.stateMobileType === 'Android'" class="ftu-dialog__header__sub-title">Google Account</span>
+    </div>
+  </div>
+  <form ng-show="dialogCtrl.deviceType || dialogCtrl.stateMobileType" name="addDeviceForm" ng-submit="dialogCtrl.addDeviceConfirm()" class="ftu-dialog__form">
+    <div ng-show="dialogCtrl.deviceType === 'iOS' || dialogCtrl.stateMobileType === 'iOS'">
+      <span for="exampleInputEmail1" class="ftu-dialog__form__title">Apple ID</span>
+      <input class="ftu-dialog__form__input" type="email" name="email1" id="text"
+        placeholder="Enter your child's Apple ID" ng-model="dialogCtrl.email" ng-disabled="dialogCtrl.isSaving" ng-readonly="dialogCtrl.dialogData.stateMobileAccountEmail"
+      required>
+      <span ng-show="addDeviceForm.email1.$error.required && addDeviceForm.email1.$touched" class="form-validation-msg input-group">Apple ID field is required!</span>
+      <span ng-show="addDeviceForm.email1.$error.email && addDeviceForm.email1.$touched" class="form-validation-msg input-group">Should be an email!</span>
+      <span for="exampleInputPassword1" class="ftu-dialog__form__title">Password</span>
+      <input type="password" name="password" class="ftu-dialog__form__input" id="password"
+        placeholder="Enter your child's Password" ng-model="dialogCtrl.password" ng-disabled="dialogCtrl.isSaving"
+      required>
+      <span ng-show="addDeviceForm.password.$error.required && addDeviceForm.password.$touched" class="form-validation-msg input-group">Password field is required!</span>
+      <span ng-if="dialogCtrl.showTwoFaCode" for="exampleInputTwoFaCode" class="ftu-dialog__form__title">
+        iOS 2 Factor Authentication Code
+        <a title="What's 2 Factor Authentication" href="https://support.apple.com/en-us/HT204915" target="_blank">
+          <sup>?</sup>
+        </a>
+      </span>
+      <input type="text" name="twoFaCode" class="ftu-dialog__form__input" id="twoFaCode"
+        ng-if="dialogCtrl.showTwoFaCode" required ng-disabled="dialogCtrl.isSaving"
+        placeholder="Enter iOS 2 Factor Authentication code" ng-model="dialogCtrl.twoFaCode">
+      <span ng-hide="dialogCtrl.isSaving" class="form-validation-msg input-group">
+        <i-cloud-sync-describetitle="dialogCtrl.errMessage.title" content="dialogCtrl.errMessage.content"></i-cloud-sync-describe>
+      </span>
+      <button type="submit" ng-disabled="addDeviceForm.$invalid || dialogCtrl.isSaving" class="ftu-dialog__form__button btn btn-info btn-lg">{{dialogCtrl.buttonText}}</button>
+    </div>
+    <div ng-show="dialogCtrl.deviceType === 'Android' || dialogCtrl.stateMobileType === 'Android'">
+      <span ng-hide="dialogCtrl.isSaving" class="form-validation-msg input-group" ng-bind-html='dialogCtrl.errMessage'></span>
+      <button ng-click="dialogCtrl.authenticate('google')" class="ftu-dialog__form__button btn btn-warning btn-lg">{{dialogCtrl.buttonText}}</button>
+    </div>
+  </form>
+  <i-cloud-help-describe></i-cloud-help-describe>
+</div>

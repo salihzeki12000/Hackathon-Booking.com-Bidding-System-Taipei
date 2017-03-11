@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" data-framework="angularjs">
+  <head>
+    <meta charset=" utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="width = device-width, minimal-ui, initial-scale = 1, user-scalable = no" />
+    <meta name="apple-mobile-web-app-title" content="Kid Guard">
+    <title>KidGuard</title>
+    <base href="/">
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="dist/assets/app.css">
+  </head>
+  <body ng-cloak>
+
+    <noscript>
+      <div class="deprecation-warning">
+        <h1>Please enable Javascript</h1>
+        <p>Demo requires your browser to have Javascript enabled.
+        <a href="http://enable-javascript.com" target="_blank">Learn more</a></p>
+      </div>
+    </noscript>
+    <ui-view class="content-area">
+      <div style="width: 100%; margin-top: 200px;">
+        <img src="/assets/images/kidguard-logo.png" style="margin: 0 auto; display: block;">
+        <img src="/assets/images/spinner/loader-dark.gif" style="margin: 0 auto; display: block;">
+      </div>
+    </ui-view>
+
+    <!-- build:dev -->
+    <script src="jspm_packages/system.js"></script>
+    <script src="system.config.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:prod -->
+    <!-- <script src="dist/app/app.js?bust={{date}}"></script> -->
+    <!-- endbuild -->
+
+    <script>
+      System.import('app/app');
+    </script>
+
+    <!-- JS Core -->
+    <script src="//maps.google.com/maps/api/js?key=AIzaSyArOIEEAcDLl9j8ILIJ1VriYvwuebSM3Zc" async></script>
+
+    <!-- WIDGETS -->
+
+    <!-- Intercom -->
+    <script>
+    (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');
+    ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];
+    i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');
+    s.type='text/javascript';s.async=true;
+    s.src='https://widget.intercom.io/widget/mp0wcnmx';
+    var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}
+    if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
+    </script>
+    <!-- End Intercom -->
+
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-K39C38"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-K39C38');</script>
+    <!-- End Google Tag Manager -->
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<div class="moduleDialog">
+  <!-- Module Location -->
+  <div class="module-grouped module-grouped-location" ng-if="dialogCtrl.module.locations">
+    <div class="module-list-location">
+      <div class="module-list-location-title pull-left">
+        Location
+      </div>
+      <i class="glyphicon glyphicon-remove-circle module-list-close pull-right" ng-click="closeThisDialog()"></i>
+      <div class="module-list-location-date">
+        <span class="pull-left module-list-location-select">
+          <i class="glyphicon glyphicon-chevron-left" ng-click="dialogCtrl.selectLocationDate(-1)"></i>
+        </span>
+        <span class="pull-right module-list-location-select">
+          <i class="glyphicon glyphicon-chevron-right" ng-click="dialogCtrl.selectLocationDate(1)"></i>
+        </span>
+        <span class="module-list-location-date-day">{{ dialogCtrl.locationSelectDate.time | kgTimeFilter: 'short-day'}}</span>
+        <br>
+        <span class="module-list-location-date-date">{{ dialogCtrl.locationSelectDate.time | kgTimeFilter: 'short-3'}}</span>
+      </div>
+    </div>
+    <div ng-if="!dialogCtrl.module.locations.length" class="module-list-location-no-location">
+      <img class="modal-blur module-list-location-no-location-image" src="assets/images/map.jpg"/>
+      <span class="module-list-location-no-location-title">There are no location on this day.</h1>
+    </div>
+    <div ng-if="dialogCtrl.module.locations.length">
+      <div map-lazy-load="https://maps.google.com/maps/api/js?key=AIzaSyArOIEEAcDLl9j8ILIJ1VriYvwuebSM3Zc">
+        <ng-map center="[{{dialogCtrl.module.locations[0].latitude}} , {{dialogCtrl.module.locations[0].longitude}}]"
+                zoom="14"
+                class="module-list-location-map"
+                default-style="false">
+          <custom-marker position="[{{ marker.latitude }}, {{ marker.longitude }}]" ng-repeat="marker in dialogCtrl.module.locations">
+            <div class="marker-info-window">
+              <span>{{ marker.formatDate }}</span>
+            </div>
+          </custom-marker>
+          <marker position="[{{ marker.latitude }}, {{ marker.longitude }}]" ng-repeat="marker in dialogCtrl.module.locations" icon="/dist/assets/images/marker-icon.png"></marker>
+        </ng-map>
+      </div>
+    </div>
+  </div>
+</div>

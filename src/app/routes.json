@@ -1,0 +1,6 @@
+[{
+  "stateName": "home",
+  "urlPrefix": "/home",
+  "type": "load",
+  "src": "app/home/home"
+}]

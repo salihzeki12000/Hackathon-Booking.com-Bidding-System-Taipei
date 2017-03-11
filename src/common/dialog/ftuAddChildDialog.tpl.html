@@ -1,0 +1,55 @@
+<div class="ftu-dialog">
+  <div class="ftu-dialog__nav">
+    <span class="ftu-dialog__nav__info pull-left">Account Setup</span>
+  </div>
+  <div class="ftu-dialog__header">
+    <span class="ftu-dialog__header__title">Step 1</span>
+    <span class="ftu-dialog__header__sub-title">Basic Information</span>
+  </div>
+
+  <form name="addChildForm"
+    ng-submit="dialogCtrl.addChildConfirm()"
+    class="ftu-dialog__form row">
+    <div class="form-group">
+        <div class="col-xs-offset-2 col-xs-8 col-sm-offset-4 col-sm-4">
+            <label>Enter your child's name</label>
+            <input class="form-control ftu-dialog__form__input" type="text" ng-model="childName" name="childName" placeholder="Name" required/>
+            <span ng-show="addChildForm.childName.$error.required && addChildForm.childName.$touched" class="form-validation-msg input-group">Child's name can not be empty!</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-xs-offset-2 col-xs-8 col-sm-offset-4 col-sm-4">
+            <label>Enter your child's birthday</label>
+            <input date-time class="form-control ftu-dialog__form__input" ng-model="dateString" name="chiildDate" format="MM/DD/YYYY" min-date="minDate" max-date="nowDate" view="date" min-view="date" required>
+            <span ng-show="addChildForm.chiildDate.$invalid && addChildForm.chiildDate.$touched" class="form-validation-msg input-group">Child's birthday is required and should be under 18 years old!</span>
+        </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-4 col-sm-4">
+        <button class="ftu-dialog__form__button btn btn-info btn-lg" type="submit" ng-disabled="addChildForm.$invalid">Next</button>
+      </div>
+    </div>
+  </form>
+  <div class="ftu-dialog__footer">
+    <div class="row">
+      <p class="col-sm-6 ftu-dialog__footer__left">
+        Where do I find my child’s iCloud login?
+        <br>
+            &nbsp;&nbsp;Apple ID
+        <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;1.	Go to “Settings” on your child’s iPhone.
+        <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;2.	Tap on “iCloud” and you’ll see the Apple ID.
+        <br>
+        &nbsp;Password
+        <br>
+        &nbsp;&nbsp;You should receive a password when you purchase the iPhone. If the password has since changed, you should get it as soon as possible.
+      </p>
+      <p class="col-sm-6 ftu-dialog__footer__right">
+        •	If you forgot the password, click “Forgot Apple ID or password” here (<a href="https://appleid.apple.com/#!&page=signin" target="_blank">link</a>) to retrieve it.
+        <br>
+        •	Ask your child for it! It’s best to explain to your child the importance of backing up their phone on iCloud in case the phone is damaged, lost or stolen. This is also a great opportunity to talk to your kid about using KidGuard for their safety.
+      </p>
+    </div>
+  </div>
+</div>

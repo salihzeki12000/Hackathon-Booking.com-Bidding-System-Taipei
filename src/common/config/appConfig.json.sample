@@ -1,0 +1,10 @@
+{
+  "apiService": {
+    "mock": false
+  },
+  "algolia": {
+    "applicationId": "",
+    "apiKey": "",
+    "index": ""
+  }
+}

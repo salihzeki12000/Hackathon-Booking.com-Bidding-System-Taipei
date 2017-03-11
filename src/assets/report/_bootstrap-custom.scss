@@ -1,0 +1,53 @@
+// custom variables and override bootstrap variables
+
+//== Colors
+
+$body-bg: #eef4f6;
+$white: #fff;
+
+$brand-primary: #297ded;
+$brand-success: #51a287;
+$brand-info: #4ab8e9;
+$brand-danger: #ef4b57;
+
+$gray-darker: #262626;
+$gray: #666;
+$gray-light: #7f7f7f;
+
+
+$clr1: #ccc;
+$clr2: #eef4f6;
+$clr3: #2b3747;
+$clr4: #237fbb;
+$clr5: #909090;
+$clr6: #1dcd6c;
+$clr7: #ea4b36;
+$clr8: #bec3c7;
+$clr9: #6e6e6e;
+$clr10: #3a393a;
+$clr11: #64c9a7;
+$clr12: #ed4335;
+$clr13: #f8f9f9;
+$clr14: #999;
+$clr15: #292941;
+$clr16: #64c7f4;
+$clr17: #3a99d8;
+
+
+//== Typography
+$font-family-sans-serif: 'sanfranciscotext', Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+$text-color: $gray;
+$link-color: $clr4;
+
+
+//== Media queries breakpoints
+$screen-lg: 1250px !default;
+//== Container sizes
+$container-large-desktop: 1230px;
+
+//== Buttons
+
+$btn-danger-bg: $clr12;
+$btn-danger-border: $clr12;
+

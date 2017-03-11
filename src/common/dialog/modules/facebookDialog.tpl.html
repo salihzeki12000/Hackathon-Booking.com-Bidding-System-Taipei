@@ -1,0 +1,57 @@
+<div class="moduleDialog">
+  <div class="module-grouped" ng-if="dialogCtrl.module.facebook_messages">
+    <div class="module-list-lists-header">
+      <div class="module-list-lists-header-title">
+        <span class="module-list-lists-title">Contacts</span>
+        <i ng-if="dialogCtrl.moduleContactPagination.pageCount !== 0 &&
+                  dialogCtrl.moduleContactPagination.page !== dialogCtrl.moduleContactPagination.pageCount"
+          class="glyphicon glyphicon-forward pull-right module-list-more"
+          ng-click="dialogCtrl.loadMoreContact()">
+          <span class="module-mobile-hide">More</span>
+        </i>
+      </div>
+      <div class="module-list-lists-header-content">
+        <span class="module-list-content-title">
+          Facebook
+          <span class="module-mobile-hide" ng-if="dialogCtrl.moduleData">
+              History with
+              <strong class="module-list-content-title-name">
+                {{ dialogCtrl.moduleData[0].handle ? dialogCtrl.moduleData[0].handle : 'anonymous' }}
+              </strong>
+          </span>
+          <i class="glyphicon glyphicon-remove-circle pull-right module-list-close" ng-click="closeThisDialog()"></i>
+          <i ng-if="dialogCtrl.modulePagination.pageCount !== 0 &&
+                    dialogCtrl.modulePagination.page !== dialogCtrl.modulePagination.pageCount"
+            class="glyphicon glyphicon-forward pull-right module-list-more"
+            ng-click="dialogCtrl.loadMore()">
+            <span class="module-mobile-hide">More</span>
+          </i>
+        </span>
+      </div>
+    </div>
+    <div class="module-list-lists">
+      <div class="module-list-lists-item"
+        ng-repeat="contact in dialogCtrl.moduleContactData"
+        ng-click="dialogCtrl.setMoudleDataItem(contact.handle)"
+        ng-class="{ 'module-list-lists-item-selected': contact.handle === dialogCtrl.moduleData[0].handle }">
+        <span class="module-list-lists-user">{{ contact.handle ? contact.handle : 'anonymous' }}</span>
+        <br>
+        <span class="module-mobile-hide module-list-lists-text text-ellipsis" ng-if="contact.text">{{ contact.text }}</span>
+        <span class="module-mobile-hide module-list-lists-text" ng-if="!contact.text">removed</span>
+      </div>
+    </div>
+    <div class="module-list-content">
+      <div class="module-list-content-item" ng-if="dialogCtrl.moduleData" ng-repeat="item in dialogCtrl.moduleData">
+        <div>
+          <span ng-if="item.from_me" class="module-list-content-user">{{ dialogCtrl.childName }}</span>
+          <span ng-if="!item.from_me" class="module-list-content-user">{{ item.handle ? item.handle : 'anonymous' }}</span>
+        </div>
+        <div class="module-list-content-data-me" ng-if="item.from_me">{{ item.text || 'removed' }}</div>
+        <div class="module-list-content-data-handle" ng-if="!item.from_me">{{ item.text || 'removed' }}</div>
+        <div class="module-list-content-date">{{ item.date | kgTimeFilter: 'referenceTime' }}</div>
+        <span ng-if="item.attachments" ng-repeat="attachment in item.attachments">{{'Attachment type is' + attachment.type + ' and '}}<a href="{{attachment.file_id}}">link</a></span>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>

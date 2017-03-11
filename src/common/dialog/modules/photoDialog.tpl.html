@@ -1,0 +1,30 @@
+<div class="moduleDialog">
+  <div class="module-grouped" ng-if="dialogCtrl.module.photos">
+    <div class="module-list-lists-header">
+      <div class="module-list-lists-header-title">
+        <span class="module-list-lists-title">Photos</span>
+      </div>
+      <div class="module-list-lists-header-content module-list-content-title-photo">
+        <span class="module-list-content-title">
+          <span class="module-mobile-hide">{{ dialogCtrl.module.photoItem.last_modified | kgTimeFilter : 'long-3' }}</span>
+          <span class="module-mobile-show">{{ dialogCtrl.module.photoItem.last_modified | kgTimeFilter : 'long-4' }}</span>
+          <i class="glyphicon glyphicon-remove-circle pull-right module-list-close" ng-click="closeThisDialog()"></i>
+        </span>
+      </div>
+    </div>
+    <div class="module-list-lists">
+      <div class="module-list-lists-item module-list-lists-item-photo col-xs-12 col-sm-6 col-md-4 col-lg-4"
+        ng-repeat="item in dialogCtrl.module.photos"
+        ng-click="dialogCtrl.setPhotoItem(item)"
+        ng-class="{ 'module-list-lists-item-selected': item.file_id === dialogCtrl.module.photoItem.file_id }">
+        <img ng-src="/attachments/modules/photos/{{ item.device_id }}/{{ item.filename }}"/>
+      </div>
+    </div>
+    <div class="module-list-content">
+      <div class="module-list-content-item" ng-if="dialogCtrl.module.photoItem">
+        <img ng-src="/attachments/modules/photos/{{ dialogCtrl.module.photoItem.device_id }}/{{ dialogCtrl.module.photoItem.filename }}"
+            class="module-list-content-item-photo"/>
+      </div>
+    </div>
+  </div>
+</div>

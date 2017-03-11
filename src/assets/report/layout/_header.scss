@@ -1,0 +1,182 @@
+#header{
+  position: relative;
+  padding-top: 22px;
+  margin-bottom: 20px;
+  @include media('>=tablet'){
+    padding-top: 31px;
+    margin-bottom: 44px;
+  }
+  .flex-row{
+    @include media('>=tablet'){
+      display: flex;
+      flex-flow: row wrap;
+      width: calc(100% + 30px);
+      align-items: center;
+    }
+    &:before,
+    &:after{
+      display: block;
+    }
+  }
+}
+.logo{
+  text-align: center;
+  margin-bottom: 20px;
+  @include media('>=tablet'){
+    margin-bottom: 0;
+  }
+  a{
+    @include vertical();
+    max-width: 114px;
+    @include media('>=tablet'){
+      margin-bottom: 20px;
+      max-width: 158px;
+    }
+    @include media('>=tablet-md'){
+      margin-bottom: 28px;
+      max-width: 188px;
+    }
+    @include media('>=widescreen'){
+      margin: 0 0 28px 30px;
+    }
+  }
+  img{
+    @include img-styles();
+  }
+}
+.intro-box{
+  background: $white;
+  border: 1px solid $clr1;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  padding: 15px;
+  @include media('>=phone'){
+    padding: 15px 31px 11px;
+  }
+  @include media('>=tablet'){
+    border-color: $white;
+    padding: 14px 20px;
+  }
+  @include media('>=widescreen'){
+    padding: 14px 45px 22px;
+    margin: 0 -40px 0 0;
+  }
+  .visual{
+    overflow: hidden;
+    background: $brand-info;
+    @include size(82px);
+    padding: 3px;
+    border-radius: 100%;
+    color: $gray-light;
+    margin-bottom: 10px;
+    @include media('>=tablet'){
+      @include size(140px);
+      margin-bottom: 0;
+    }
+    @include media('>=tablet-md'){
+      @include size(200px);
+    }
+    img{
+      border-radius: 100%;
+      display: block;
+    }
+  }
+  .text-holder{
+    width: calc(100% - 82px);
+    @include font(14, 20, 500);
+    padding: 0 0 0 10px;
+    @include media('>=phone'){
+      padding: 0 0 0 26px;
+    }
+    @include media('>=tablet'){
+      width: calc(100% - 160px);
+      @include fontsize(20, 26);
+      padding: 0 0 0 20px;
+    }
+    @include media('>=tablet-md'){
+      width: calc(100% - 200px);
+      @include fontsize(24, 28);
+      padding: 0 0 0 33px;
+    }
+  }
+  a{
+    color: inherit;
+    &:hover{
+      color: $brand-info;
+    }
+  }
+  .name-title{
+    display: block;
+    text-transform: capitalize;
+    color: $gray-dark;
+    @include font(18, 20, 500);
+    margin: 0;
+    @include media('>=tablet'){
+      color: $gray-light;
+      margin: 0 0 20px;
+      @include fontsize(26, 26);
+    }
+    @include media('>=tablet-md'){
+      margin: 0 0 40px;
+      @include fontsize(30, 30);
+    }
+  }
+  dl{
+    margin: 0;
+    padding: 0;
+    color: $gray-light;
+    letter-spacing: -4px;
+    font-size: inherit;
+    line-height: inherit;
+    dt{
+      font-weight: 500;
+      margin: 0;
+      letter-spacing: normal;
+      max-width: 115px;
+      @include vertical();
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      font-size: inherit;
+      line-height: inherit;
+      @include media('>=tablet'){
+        max-width: 200px;
+      }
+    }
+    dd{
+      letter-spacing: normal;
+      width: calc(100% - 120px);
+      @include vertical();
+      font-size: inherit;
+      line-height: inherit;
+      padding: 0 0 0 4px;
+      @include media('>=tablet'){
+        width: calc(100% - 204px);
+      }
+    }
+    address{
+      margin: 0;
+      font-style: normal;
+      line-height: inherit;
+    }
+  }
+}
+
+.report-header {
+  width: 100%;
+  color: $gray;
+  background: white;
+  padding: 25px;
+  text-align:center;
+
+  h1 {
+    color: $brand-danger;
+    font-size: 56px;
+    margin-top: 10px;
+  }
+
+  .report-header-body {
+    font-size: 30px;
+  }
+}
