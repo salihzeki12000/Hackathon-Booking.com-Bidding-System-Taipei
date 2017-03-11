@@ -6,32 +6,32 @@ import adminHeaderTemplate from 'common/layouts/admin/header.tpl';
 import adminJSTemplate from 'common/layouts/admin/admin-assets-css-development.tpl';
 import adminCSSTemplate from 'common/layouts/admin/admin-assets-js-development.tpl';
 
-import HomeController from './HomeController';
+import HotelController from './HotelController';
 import LayoutController from '../../common/layouts/LayoutController';
-import homeTemplate from './home.tpl';
+import hotelTemplate from './hotel.tpl';
 
 /* @ngInject */
 function ConfigureModule($stateProvider) {
-  $stateProvider.state('home', {
-    url: '/home',
+  $stateProvider.state('hotel', {
+    url: '/hotel',
     views: {
       '': {
         templateUrl: adminLayoutNoSidebarTemplate.name,
       },
-      '@home': {
-        controller: HomeController,
-        controllerAs: 'homeCtrl',
-        templateUrl: homeTemplate.name,
+      '@hotel': {
+        controller: HotelController,
+        controllerAs: 'HotelCtrl',
+        templateUrl: hotelTemplate.name,
       },
-      'header@home': {
+      'header@hotel': {
         controller: LayoutController,
         controllerAs: 'layoutCtrl',
         templateUrl: adminHeaderTemplate.name,
       },
-      'assets-css@home': {
+      'assets-css@hotel': {
         templateUrl: adminCSSTemplate.name,
       },
-      'assets-js@home': {
+      'assets-js@hotel': {
         templateUrl: adminJSTemplate.name,
       },
     },
@@ -39,9 +39,9 @@ function ConfigureModule($stateProvider) {
 }
 
 export default angular
-  .module('home', [
+  .module('hotel', [
     modalModule.name,
-    homeTemplate.name,
+    hotelTemplate.name,
     adminLayoutNoSidebarTemplate.name,
     adminHeaderTemplate.name,
     adminJSTemplate.name,

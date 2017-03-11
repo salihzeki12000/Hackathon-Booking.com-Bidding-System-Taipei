@@ -3,4 +3,19 @@
   "urlPrefix": "/home",
   "type": "load",
   "src": "app/home/home"
+}, {
+  "stateName": "cbid",
+  "urlPrefix": "/cbid",
+  "type": "load",
+  "src": "app/cbid/cbid"
+}, {
+  "stateName": "hotel",
+  "urlPrefix": "/hotel",
+  "type": "load",
+  "src": "app/hotel/hotel"
+}, {
+  "stateName": "hbid",
+  "urlPrefix": "/hbid",
+  "type": "load",
+  "src": "app/hbid/hbid"
 }]

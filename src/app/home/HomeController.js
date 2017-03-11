@@ -2,8 +2,8 @@ export default class HomeController {
 
   /*@ngInject*/
   constructor($state, $log, $cookieStore, AuthService, SubscriptionService, ToastrService, moment) {
-    let loginCtrl = this;
-    loginCtrl.message = 'this is a message';
+    let homeCtrl = this;
+    homeCtrl.message = 'this is a home';
     this.subscriptionService = SubscriptionService;
     this.authService = AuthService;
     this.toastrService = ToastrService;

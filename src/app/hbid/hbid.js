@@ -6,32 +6,32 @@ import adminHeaderTemplate from 'common/layouts/admin/header.tpl';
 import adminJSTemplate from 'common/layouts/admin/admin-assets-css-development.tpl';
 import adminCSSTemplate from 'common/layouts/admin/admin-assets-js-development.tpl';
 
-import HomeController from './HomeController';
+import HbidController from './HbidController';
 import LayoutController from '../../common/layouts/LayoutController';
-import homeTemplate from './home.tpl';
+import hbidTemplate from './hbid.tpl';
 
 /* @ngInject */
 function ConfigureModule($stateProvider) {
-  $stateProvider.state('home', {
-    url: '/home',
+  $stateProvider.state('hbid', {
+    url: '/hbid',
     views: {
       '': {
         templateUrl: adminLayoutNoSidebarTemplate.name,
       },
-      '@home': {
-        controller: HomeController,
-        controllerAs: 'homeCtrl',
-        templateUrl: homeTemplate.name,
+      '@hbid': {
+        controller: HbidController,
+        controllerAs: 'hbidCtrl',
+        templateUrl: hbidTemplate.name,
       },
-      'header@home': {
+      'header@hbid': {
         controller: LayoutController,
         controllerAs: 'layoutCtrl',
         templateUrl: adminHeaderTemplate.name,
       },
-      'assets-css@home': {
+      'assets-css@hbid': {
         templateUrl: adminCSSTemplate.name,
       },
-      'assets-js@home': {
+      'assets-js@hbid': {
         templateUrl: adminJSTemplate.name,
       },
     },
@@ -39,9 +39,9 @@ function ConfigureModule($stateProvider) {
 }
 
 export default angular
-  .module('home', [
+  .module('hbid', [
     modalModule.name,
-    homeTemplate.name,
+    hbidTemplate.name,
     adminLayoutNoSidebarTemplate.name,
     adminHeaderTemplate.name,
     adminJSTemplate.name,

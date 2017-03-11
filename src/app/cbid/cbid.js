@@ -6,32 +6,32 @@ import adminHeaderTemplate from 'common/layouts/admin/header.tpl';
 import adminJSTemplate from 'common/layouts/admin/admin-assets-css-development.tpl';
 import adminCSSTemplate from 'common/layouts/admin/admin-assets-js-development.tpl';
 
-import HomeController from './HomeController';
+import CbidController from './CbidController';
 import LayoutController from '../../common/layouts/LayoutController';
-import homeTemplate from './home.tpl';
+import cbidTemplate from './cbid.tpl';
 
 /* @ngInject */
 function ConfigureModule($stateProvider) {
-  $stateProvider.state('home', {
-    url: '/home',
+  $stateProvider.state('cbid', {
+    url: '/cbid',
     views: {
       '': {
         templateUrl: adminLayoutNoSidebarTemplate.name,
       },
-      '@home': {
-        controller: HomeController,
-        controllerAs: 'homeCtrl',
-        templateUrl: homeTemplate.name,
+      '@cbid': {
+        controller: CbidController,
+        controllerAs: 'cbidCtrl',
+        templateUrl: cbidTemplate.name,
       },
-      'header@home': {
+      'header@cbid': {
         controller: LayoutController,
         controllerAs: 'layoutCtrl',
         templateUrl: adminHeaderTemplate.name,
       },
-      'assets-css@home': {
+      'assets-css@cbid': {
         templateUrl: adminCSSTemplate.name,
       },
-      'assets-js@home': {
+      'assets-js@cbid': {
         templateUrl: adminJSTemplate.name,
       },
     },
@@ -39,9 +39,9 @@ function ConfigureModule($stateProvider) {
 }
 
 export default angular
-  .module('home', [
+  .module('cbid', [
     modalModule.name,
-    homeTemplate.name,
+    cbidTemplate.name,
     adminLayoutNoSidebarTemplate.name,
     adminHeaderTemplate.name,
     adminJSTemplate.name,
