@@ -11,5 +11,11 @@ export default class HomeController {
     this.$state = $state;
     this.$log = $log;
     this.moment = moment;
+
+    this.date = null;
+    this.location = '';
+    this.days = 1;
+    this.budget = null;
+
   }
 }
