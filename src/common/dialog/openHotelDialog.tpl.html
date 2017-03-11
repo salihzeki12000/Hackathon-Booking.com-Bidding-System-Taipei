@@ -3,8 +3,40 @@
     <i class="glyphicon glyphicon-remove-circle pull-right module-list-close" ng-click="closeThisDialog()"></i>
     <h1 class="report-wizzard-descrp-title">Hotel Data</h1>
   </div>
-  <div class="col-xs-12">
-    <!--<img class="report-wizzard-demo" src="/assets/images/report1.png">-->
+  <div class="col-xs-12 cbid-dialog-box">
+    <img src="http://t-ec.bstatic.com/images/hotel/square200/643/64331125.jpg">
   </div>
-  <button class="col-xs-offset-11 col-sxs-1 btn btn-large btn-primary home-btn" ng-click="dialogCtrl.select()">Next</button>
+  <div class="col-xs-12">
+    <br>
+    <div class="col-xs-12 cbid-dialog-left">
+      <label>
+        Hotel: W Hotel
+      </label>
+    </div>
+    <div class="col-xs-12 cbid-dialog-left">
+      <label>
+        Ln. 10, abc road, Taipei, Taiwan
+      </label>
+    </div>
+    <div class="col-xs-12 cbid-dialog-left">
+      <label>
+        Date: 12/03/2017
+      </label>
+    </div>
+    <div class="col-xs-12 cbid-dialog-left">
+      <label>
+        Days: 6 days
+      </label>
+    </div>
+    <div class="col-xs-12 cbid-dialog-left">
+      <label>Services</label>
+    </div>
+    <div class="col-xs-6 cbid-dialog-left" ng-repeat="item in dialogCtrl.hotel.services">
+      <li>{{ item }}</li>
+    </div>
+  </div>
+  <button class="col-xs-offset-9 col-sxs-1 btn btn-large btn-primary home-btn" ng-click="dialogCtrl.select()">Next</button>
+  <div>
+    <br>
+  </div>
 </div>

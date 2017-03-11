@@ -18,3 +18,12 @@
     padding-left: 10px;
   }
 }
+
+.cbid-dialog {
+  &-box {
+    max-height: 200px;
+  }
+  &-left {
+    text-align: left;
+  }
+}
