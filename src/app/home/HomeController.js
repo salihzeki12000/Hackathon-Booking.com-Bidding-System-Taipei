@@ -20,16 +20,15 @@ export default class HomeController {
     this.days = 1;
     this.budget = null;
     this.services = {
-      2: false,
       3: false,
-      4: false,
+      22: false,
+      242: false,
+      124: false,
       5: false,
       6: false,
-      7: false,
-      8: false,
-      9: false,
-      15: false,
-      23: false,
+      12: false,
+      13: false,
+      20: false,
     };
     this.servicesSelected = [];
   }

@@ -1,12 +1,16 @@
 <div class="row">
-  <h3 class="col-sm-offset-5 col-sm-7">Bidding Area</h3>
-  <div class="cbid-item"
+  <h3 class="col-sm-offset-4 col-sm-7">Your bids against the market</h3>
+  <div class="hbid-small"
       ng-click="hbidCtrl.selectMyHotel(hbidCtrl.myHotel)">
     <img class="cbid-item-image" src="{{hbidCtrl.myHotel.image}}">
+  </div>
+  <div class="hbid-descrpt">
     <div class="cbid-item-data">
-      <h5 class="cbid-item-hotel">{{ hbidCtrl.myHotel.name }}</h5>
-      <h5>End date: {{ hbidCtrl.moment(hbidCtrl.myHotel.date).format('MMM do YYYY') }}</h5>
-      <h5>Bid price: {{ hbidCtrl.myHotel.price }}</h5>
+      <h4 class="cbid-item-hotel">{{ hbidCtrl.myHotel.name }}  <button class="btn btn-small btn-primary">EDIT</button></h4>
+      <h4>End date: {{ hbidCtrl.moment(hbidCtrl.myHotel.date).format('MMM do YYYY') }}</h4>
+      <h4>Bid price: {{ hbidCtrl.myHotel.price }}</h4>
+      <h4 class="hbid-descrpt-take-point">Analysis: You rank in top 10, good job</h4>
+      <h4 class="hbid-descrpt-take-point">Suggestion: Provide more services requested from the customer</h4>
     </div>
   </div>
   <div class="cbid-item"
@@ -17,6 +21,14 @@
       <h5 class="cbid-item-hotel">{{ itemSecret.name }}</h5>
       <h5>End date: {{ hbidCtrl.moment(itemSecret.date).format('MMM do YYYY') }}</h5>
       <h5>Bid price: {{ itemSecret.price }}</h5>
+      <label>Avaliable services (FREE)</label>
+      <div ng-repeat="data in itemSecret.avaliable_facilities">
+        <li class="cbid-item-service-ok">{{ hbidCtrl.mappingData[data] }}</li>
+      </div>
+      <label>Unavaliable services</label>
+      <div ng-repeat="data in itemSecret.unavaliable_facilities">
+        <li class="cbid-item-service-no">{{ hbidCtrl.mappingData[data] }}</li>
+      </div>
     </div>
   </div>
 </div>

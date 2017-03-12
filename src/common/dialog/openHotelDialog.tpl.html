@@ -24,16 +24,16 @@
       </label>
     </div>
     <div class="col-xs-12 cbid-dialog-left">
-      <label>Avaliable</label>
+      <label>Avaliable services (FREE)</label>
     </div>
     <div class="col-xs-6 cbid-dialog-left" ng-repeat="item in dialogCtrl.hotel.avaliable_facilities">
-      <li style="color: #5cb85c">{{ dialogCtrl.mappingData[item] }}</li>
+      <li class="cbid-item-service-ok">{{ dialogCtrl.mappingData[item] }}</li>
     </div>
     <div class="col-xs-12 cbid-dialog-left">
-      <label>Unavaliable</label>
+      <label>Unavaliable services</label>
     </div>
     <div class="col-xs-6 cbid-dialog-left" ng-repeat="item in dialogCtrl.hotel.unavaliable_facilities">
-      <li  style="color: #f0ad4e">{{ dialogCtrl.mappingData[item] }}</li>
+      <li class="cbid-item-service-no">{{ dialogCtrl.mappingData[item] }}</li>
     </div>
   </div>
   <div class="col-xs-12">

@@ -23,4 +23,9 @@
   "urlPrefix": "/success",
   "type": "load",
   "src": "app/success/success"
+}, {
+  "stateName": "map",
+  "urlPrefix": "/map",
+  "type": "load",
+  "src": "app/map/map"
 }]

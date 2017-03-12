@@ -1,3 +1,5 @@
+import mappingData from '../../common/mockData/mapping.json!';
+
 export default class HbidController {
 
   /*@ngInject*/
@@ -10,7 +12,7 @@ export default class HbidController {
     this.$log = $log;
     this.moment = moment;
     this.dialogService = dialogService;
-
+    this.mappingData = mappingData;
     this.myHotel = {
       name: 'W Hotel',
       price: '1000',
@@ -26,7 +28,7 @@ export default class HbidController {
         price: '1000',
         image: 'assets/images/secret-hotel.png',
         date: 1491353600000,
-        avaliable_facilities: [7, 8, 9],
+        avaliable_facilities: [7, 22, 13],
         unavaliable_facilities: [2, 3, 5],
       },
       {
@@ -34,7 +36,7 @@ export default class HbidController {
         price: '950',
         image: 'assets/images/secret-hotel.png',
         date: 1491653600000,
-        avaliable_facilities: [7, 8, 9, 12],
+        avaliable_facilities: [7, 8, 22],
         unavaliable_facilities: [2, 3, 5],
       },
       {
@@ -42,7 +44,7 @@ export default class HbidController {
         price: '1100',
         image: 'assets/images/secret-hotel.png',
         date: 1491953600000,
-        avaliable_facilities: [8, 9],
+        avaliable_facilities: [12, 8, 124],
         unavaliable_facilities: [2, 3, 5],
       },
     ];
