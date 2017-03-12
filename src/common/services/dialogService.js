@@ -11,7 +11,7 @@ class DialogService {
     this._ = lodash;
   }
 
-  openHotel(hotel) {
+  openHotel({ hotel, bid }) {
     this.ngDialog.open({
       template: 'common/dialog/openHotelDialog.tpl.html',
       controllerAs: 'dialogCtrl',
@@ -19,7 +19,7 @@ class DialogService {
       className: 'ngdialog-theme-default custom-full-screen custom-pc-width',
       showClose: false,
       closeByNavigation: true,
-      data: JSON.stringify({ method: 'viewHotel', hotel }),
+      data: JSON.stringify({ method: 'viewHotel', hotel, bid }),
     });
   }
 }

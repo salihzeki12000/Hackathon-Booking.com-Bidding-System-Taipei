@@ -1,0 +1,22 @@
+<div class="row">
+  <h3 class="col-sm-offset-5 col-sm-7">Bidding Area</h3>
+  <div class="cbid-item"
+      ng-click="hbidCtrl.selectMyHotel(hbidCtrl.myHotel)">
+    <img class="cbid-item-image" src="{{hbidCtrl.myHotel.image}}">
+    <div class="cbid-item-data">
+      <h5 class="cbid-item-hotel">{{ hbidCtrl.myHotel.name }}</h5>
+      <h5>End date: {{ hbidCtrl.moment(hbidCtrl.myHotel.date).format('MMM do YYYY') }}</h5>
+      <h5>Bid price: {{ hbidCtrl.myHotel.price }}</h5>
+    </div>
+  </div>
+  <div class="cbid-item"
+      ng-repeat="itemSecret in hbidCtrl.bidHotels"
+      ng-click="hbidCtrl.selectSecretHotel(itemSecret)">
+    <img class="cbid-item-image" src="assets/images/secret-hotel.png">
+    <div class="cbid-item-data">
+      <h5 class="cbid-item-hotel">{{ itemSecret.name }}</h5>
+      <h5>End date: {{ hbidCtrl.moment(itemSecret.date).format('MMM do YYYY') }}</h5>
+      <h5>Bid price: {{ itemSecret.price }}</h5>
+    </div>
+  </div>
+</div>

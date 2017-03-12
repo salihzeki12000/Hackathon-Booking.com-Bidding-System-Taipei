@@ -13,6 +13,33 @@ export default class CbidController {
     this.hotels = [1, 2, 3, 4, 5, 6];
     this.selectedHotel = null;
     $log.log(cbidCtrl.message);
+
+    this.bidHotels = [
+      {
+        name: 'W Hotel',
+        price: '1000',
+        image: 'http://t-ec.bstatic.com/images/hotel/square200/643/64331125.jpg',
+        date: 1491353600000,
+        avaliable_facilities: ['meeting_room', 'casino'],
+        unavaliable_facilities: ['garden', 'pool'],
+      },
+      {
+        name: 'Garden Taipie',
+        price: '950',
+        image: 'http://t-ec.bstatic.com/images/hotel/square200/190/19056004.jpg',
+        date: 1491653600000,
+        avaliable_facilities: ['meeting_room', 'casino'],
+        unavaliable_facilities: ['garden', 'pool'],
+      },
+      {
+        name: 'Love Hotel',
+        price: '1100',
+        image: 'http://t-ec.bstatic.com/images/hotel/square200/897/89774648.jpg',
+        date: 1491953600000,
+        avaliable_facilities: ['meeting_room', 'casino'],
+        unavaliable_facilities: ['garden', 'pool'],
+      },
+    ];
   }
 
   select(item) {

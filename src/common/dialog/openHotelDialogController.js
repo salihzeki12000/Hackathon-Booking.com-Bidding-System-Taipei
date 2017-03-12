@@ -2,7 +2,7 @@ export default class OpenHotelDialogController {
 
   /*@ngInject*/
   constructor($scope, $log, $auth, $http,
-              DeviceService, ListenrService, ToastrService, $state) {
+              DeviceService, ListenrService, ToastrService, $state, moment) {
     this.deviceService = DeviceService;
     this.listenrService = ListenrService;
     this.toastrService = ToastrService;
@@ -11,9 +11,12 @@ export default class OpenHotelDialogController {
     this.$http = $http;
     this.$log = $log;
     this.$state = $state;
+    this.moment = moment;
     this.hotel = this.$scope.ngDialogData.hotel;
+    this.bidding = this.$scope.ngDialogData.bid;
+    console.log(this.bidding);
     $log.debug(this.$scope.ngDialogData.hotel);
-    this.hotel = { services: [
+    this.hotel.services = [
       'meeting_room',
       'casino',
       'free_parking',
@@ -24,7 +27,7 @@ export default class OpenHotelDialogController {
       'swimming_pool',
       'hot_spring_bath',
       'restaurant',
-    ] };
+    ];
   }
 
   select() {

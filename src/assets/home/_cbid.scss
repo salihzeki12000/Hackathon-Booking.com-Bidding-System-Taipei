@@ -9,7 +9,7 @@
   float:left;
 
   &-image {
-    width: 100%;
+    width: 200px;
     height: 150px;
   }
   &-data {
@@ -23,7 +23,7 @@
 }
 .cbid-dialog {
   &-box {
-    max-height: 200px;
+    height: 200px;
   }
   &-left {
     text-align: left;

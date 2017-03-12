@@ -39,7 +39,7 @@ export default class HomeController {
       p_allowed_overbudget: 2,
       location: this.location,
       length_stay: this.days,
-      when: tmpDate,
+      when: tmpDate * 1000,
       requirements: this.servicesSelected,
     };
     this.$log.log('HomeController data' + data);

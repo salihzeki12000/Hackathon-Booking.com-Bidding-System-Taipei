@@ -1,13 +1,13 @@
 <div class="row">
   <h3 class="col-sm-offset-5 col-sm-7">Bidding Area</h3>
   <div class="cbid-item"
-      ng-repeat="item in cbidCtrl.hotels"
+      ng-repeat="item in cbidCtrl.bidHotels"
       ng-click="cbidCtrl.select(item)">
-    <img class="cbid-item-image" src="http://t-ec.bstatic.com/images/hotel/square200/643/64331125.jpg">
+    <img class="cbid-item-image" src="{{item.image}}">
     <div class="cbid-item-data">
-      <h5 class="cbid-item-hotel">W Hotel</h5>
-      <h5>5 Start</h5>
-      <h5>$ 100</h5>
+      <h5 class="cbid-item-hotel">{{ item.name }}</h5>
+      <h5>5 Star</h5>
+      <h5>$ {{ item.price }}</h5>
     </div>
   </div>
 </div>
