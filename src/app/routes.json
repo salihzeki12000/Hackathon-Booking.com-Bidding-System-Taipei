@@ -18,4 +18,9 @@
   "urlPrefix": "/hbid",
   "type": "load",
   "src": "app/hbid/hbid"
+}, {
+  "stateName": "success",
+  "urlPrefix": "/success",
+  "type": "load",
+  "src": "app/success/success"
 }]

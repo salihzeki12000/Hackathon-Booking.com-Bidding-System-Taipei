@@ -1,19 +1,14 @@
 <div class="report-wizzard row">
   <div class="col-xs-12 creport-wizzard-descrp">
     <i class="glyphicon glyphicon-remove-circle pull-right module-list-close" ng-click="closeThisDialog()"></i>
-    <h1 class="report-wizzard-descrp-title">Hotel Data</h1>
+    <h1 class="report-wizzard-descrp-title">{{ dialogCtrl.hotel.name }}</h1>
   </div>
   <div class="col-xs-12 cbid-dialog-box">
     <img src="{{ dialogCtrl.hotel.image }}">
   </div>
   <div class="col-xs-12">
     <br>
-    <div class="col-xs-12 cbid-dialog-left">
-      <label>
-        {{ dialogCtrl.hotel.name }}
-      </label>
-    </div>
-    <div class="col-xs-12 cbid-dialog-left">
+    <div ng-hide="dialogCtrl.bidding" class="col-xs-12 cbid-dialog-left">
       <label>
        Address: Ln. 10, abc road, Taipei, Taiwan
       </label>
@@ -35,8 +30,8 @@
       <li>{{ item }}</li>
     </div>
   </div>
-  <button ng-hide="dialogCtrl.bidding" class="col-xs-offset-9 col-sxs-1 btn btn-large btn-primary home-btn" ng-click="dialogCtrl.select()">Next</button>
-  <div>
-    <br>
+  <div class="col-xs-12">
+    <button ng-hide="dialogCtrl.bidding" class="col-xs-offset-7 col-xs-4 btn btn-large btn-primary home-btn" ng-click="dialogCtrl.select()">TAKE THE OFFER</button>
+    <p class="col-xs-12"></p>
   </div>
 </div>

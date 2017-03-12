@@ -32,6 +32,7 @@ export default class OpenHotelDialogController {
 
   select() {
     console.log(this.$scope.ngDialogData.hotel);
-    this.$state.go('home');
+    this.$scope.closeThisDialog();
+    this.$state.go('success');
   }
 }
