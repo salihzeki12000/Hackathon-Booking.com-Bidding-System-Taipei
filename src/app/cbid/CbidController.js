@@ -21,7 +21,21 @@ export default class CbidController {
     this.hotelsData = hotelsData;
     $log.log(cbidCtrl.message);
 
-    this.bidHotels = this.hotelsData;
+    this.bidHotels = [
+      {
+        name: 'W Hotel',
+        price: '1000',
+        image: 'http://t-ec.bstatic.com/images/hotel/square200/643/64331125.jpg',
+        date: 1491353600000,
+        recommended: true,
+        avaliable_facilities: [7, 8, 9],
+        unavaliable_facilities: [2, 3, 5],
+      },
+    ];
+    // Example of asyn api.
+    ApiService.getOffers().then((response) => {
+      this.bidHotels = response.data;
+    });
   }
 
   select(item) {
