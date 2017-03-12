@@ -16,8 +16,8 @@ export default class HbidController {
       price: '1000',
       date: 1491753600000,
       image: 'http://t-ec.bstatic.com/images/hotel/square200/643/64331125.jpg',
-      avaliable_facilities: ['meeting_room', 'casino'],
-      unavaliable_facilities: ['garden', 'pool'],
+      avaliable_facilities: [7, 8, 9],
+      unavaliable_facilities: [2, 3, 5],
     };
 
     this.bidHotels = [
@@ -26,24 +26,24 @@ export default class HbidController {
         price: '1000',
         image: 'assets/images/secret-hotel.png',
         date: 1491353600000,
-        avaliable_facilities: ['meeting_room', 'casino'],
-        unavaliable_facilities: ['garden', 'pool'],
+        avaliable_facilities: [7, 8, 9],
+        unavaliable_facilities: [2, 3, 5],
       },
       {
         name: 'Anonymous2',
         price: '950',
         image: 'assets/images/secret-hotel.png',
         date: 1491653600000,
-        avaliable_facilities: ['meeting_room', 'casino'],
-        unavaliable_facilities: ['garden', 'pool'],
+        avaliable_facilities: [7, 8, 9, 12],
+        unavaliable_facilities: [2, 3, 5],
       },
       {
         name: 'Anonymous3',
         price: '1100',
         image: 'assets/images/secret-hotel.png',
         date: 1491953600000,
-        avaliable_facilities: ['meeting_room', 'casino'],
-        unavaliable_facilities: ['garden', 'pool'],
+        avaliable_facilities: [8, 9],
+        unavaliable_facilities: [2, 3, 5],
       },
     ];
     this.servicesSelected = [];

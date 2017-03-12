@@ -1,3 +1,5 @@
+import mappingData from '../../common/mockData/mapping.json!';
+
 export default class OpenHotelDialogController {
 
   /*@ngInject*/
@@ -16,18 +18,7 @@ export default class OpenHotelDialogController {
     this.bidding = this.$scope.ngDialogData.bid;
     console.log(this.bidding);
     $log.debug(this.$scope.ngDialogData.hotel);
-    this.hotel.services = [
-      'meeting_room',
-      'casino',
-      'free_parking',
-      'pickup',
-      'laundry',
-      'fitness',
-      'garden',
-      'swimming_pool',
-      'hot_spring_bath',
-      'restaurant',
-    ];
+    this.mappingData = mappingData;
   }
 
   select() {

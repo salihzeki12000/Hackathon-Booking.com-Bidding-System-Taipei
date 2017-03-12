@@ -54,7 +54,7 @@
         <input type="checkbox"
             ng-model="homeCtrl.services[serviceKey]"
             ng-click="homeCtrl.selectService(serviceKey)">
-        {{ serviceKey }}
+        {{ homeCtrl.mappingData[serviceKey] }}
       </div>
     </div>
     <div class="col-xs-4">
@@ -62,7 +62,7 @@
       <div class="home-services-selected">
         <div ng-repeat="service in homeCtrl.servicesSelected">
           <label>
-            {{ service }}
+            {{ homeCtrl.mappingData[service] }}
           </label>
         </div>
       </div>

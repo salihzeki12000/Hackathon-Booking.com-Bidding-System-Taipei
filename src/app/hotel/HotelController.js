@@ -34,7 +34,6 @@ export default class HotelController {
     };
 
     this.servicesSelected = [];
-
     this.init();
   }
 

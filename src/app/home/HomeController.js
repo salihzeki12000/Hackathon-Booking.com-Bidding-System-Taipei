@@ -1,3 +1,5 @@
+import mappingData from '../../common/mockData/mapping.json!';
+
 export default class HomeController {
 
   /*@ngInject*/
@@ -11,22 +13,23 @@ export default class HomeController {
     this.$state = $state;
     this.$log = $log;
     this.moment = moment;
+    this.mappingData = mappingData;
 
     this.date = null;
     this.location = '';
     this.days = 1;
     this.budget = null;
     this.services = {
-      meeting_room: false,
-      casino: false,
-      free_parking: false,
-      pickup: false,
-      laundry: false,
-      fitness: false,
-      garden: false,
-      swimming_pool: false,
-      hot_spring_bath: false,
-      restaurant: false,
+      2: false,
+      3: false,
+      4: false,
+      5: false,
+      6: false,
+      7: false,
+      8: false,
+      9: false,
+      15: false,
+      23: false,
     };
     this.servicesSelected = [];
   }
