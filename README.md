@@ -1,3 +1,5 @@
+# Bidding System based on SystemJS + AngularJS for front-end.
+
 # SystemJS + AngularJS
 
 Seed project for ES6 modules via SystemJS with ES6 syntax using Babel that lazy-load and bundle build with AngularJS.
