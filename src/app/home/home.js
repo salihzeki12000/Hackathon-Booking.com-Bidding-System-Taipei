@@ -1,6 +1,5 @@
 import angular from 'angular';
 
-import { modalModule } from 'common/core';
 import adminLayoutNoSidebarTemplate from 'common/layouts/admin/admin-layout-no-sidebar.tpl';
 import adminHeaderTemplate from 'common/layouts/admin/header.tpl';
 import adminJSTemplate from 'common/layouts/admin/admin-assets-css-development.tpl';
@@ -40,7 +39,6 @@ function ConfigureModule($stateProvider) {
 
 export default angular
   .module('home', [
-    modalModule.name,
     homeTemplate.name,
     adminLayoutNoSidebarTemplate.name,
     adminHeaderTemplate.name,

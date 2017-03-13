@@ -19,25 +19,8 @@ import 'toastr';
 import 'satellizer';
 import 'angular-sanitize';
 import routing from 'common/utils/routing';
-import anuglarLogglyLogger from 'common/utils/angular-loggly-logger';
-import authModule from 'common/services/auth';
-import menuModule from 'common/services/menu';
-import childModule from 'common/services/child';
-import deviceModule from 'common/services/device';
-import gtmModule from 'common/services/gtmService';
 import dialogModule from 'common/services/dialogService';
-import listenerModule from 'common/services/listener';
-import moduleService from 'common/services/module';
-import intercomService from 'common/services/intercomService';
-import subscriptionService from 'common/services/subscription';
-import algoliaService from 'common/services/algoliaService';
-import authInterceptor from 'common/utils/auth-interceptors';
-import errorInterceptor from 'common/utils/error-interceptors';
 import dialogService from 'common/dialog/dialog';
-
-import kgTimeFilter from 'common/filter/kgTimeFilter';
-import kgDistanceFilter from 'common/filter/kgDistanceFilter';
-
 import toastr from 'toastr/build/toastr.min.css!'; // eslint-disable-line
 import ngDialog from 'ng-dialog/css/ngDialog.css!'; // eslint-disable-line
 import ngDialogThemeDefault from 'ng-dialog/css/ngDialog-theme-default.css!'; // eslint-disable-line
@@ -47,32 +30,10 @@ import ngDatePickerPlain from 'g00fy-/angular-datepicker/dist/angular-datepicker
 let app = angular.module('app', [
   'ui.router', 'oc.lazyLoad', 'ngCookies', 'ngDialog', 'ngMap', 'ncy-angular-breadcrumb', 'ngMessages',
   'ngSanitize', 'angularMoment', 'ngLodash', 'datePicker', 'satellizer',
-  authModule.name, menuModule.name, childModule.name, deviceModule.name, listenerModule.name, moduleService.name,
-  subscriptionService.name, apiServiceModule.name, authInterceptor.name, toastrServiceModule.name, dialogService.name,
-  algoliaService.name,
-  gtmModule.name, intercomService.name, anuglarLogglyLogger.name, dialogModule.name, errorInterceptor.name,
-  kgTimeFilter.name, kgDistanceFilter.name,
+   apiServiceModule.name, toastrServiceModule.name, dialogService.name, dialogModule.name,
 ]);
 
 app.config(routing(app));
-app.config(function($authProvider) {
-    $authProvider.google({
-      responseType: 'token',
-      scope: [
-        'profile',
-        'email',
-        'https://www.googleapis.com/auth/contacts',
-        'https://www.googleapis.com/auth/plus.me',
-        'https://www.google.com/m8/feeds',
-        'https://www.googleapis.com/auth/drive.metadata.readonly',
-        'https://www.googleapis.com/auth/drive.photos.readonly',
-        'https://www.googleapis.com/auth/drive',
-        'https://www.googleapis.com/auth/gmail.modify',
-        'https://picasaweb.google.com/data/',
-      ],
-      clientId: '985015306974-74hsqfn0rh5uhlpovaiqaknbehd23jm9.apps.googleusercontent.com',
-    });
-  });
 
 app.config(['$urlRouterProvider', '$locationProvider', '$compileProvider', '$logProvider', '$httpProvider',
   '$ocLazyLoadProvider',
@@ -95,22 +56,10 @@ app.config(['$urlRouterProvider', '$locationProvider', '$compileProvider', '$log
   });
 }]);
 
-app.config(function ($httpProvider) {
-  $httpProvider.interceptors.push('authInterceptor', 'errorInterceptor');
-});
-
 app.config(['ngDialogProvider', function (ngDialogProvider) {
   ngDialogProvider.setDefaults({
     closeByDocument: false,
   });
-}]);
-
-app.config(['LogglyLoggerProvider', function(LogglyLoggerProvider) {
-  LogglyLoggerProvider.inputToken('3b3f7740-32d7-4a2d-9232-eebd154acd7f').sendConsoleErrors(true);
-}]);
-
-app.run(['intercomService', function (intercomService) {
-  intercomService.set();
 }]);
 
 angular.element(document).ready(function () {

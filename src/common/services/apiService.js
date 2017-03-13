@@ -1,15 +1,11 @@
 import angular from 'angular';
-import appConfig from '../config/appConfig.json!';
-import apiDaoModule from './dao/apiDao';
-import apiMockDaoModule from './dao/apiMockDao';
 
 class ApiService {
 
   /*@ngInject*/
-  constructor($http, $cookieStore, apiDao, apiMockDao) {
+  constructor($http, $cookieStore) {
     this.$http = $http;
     this.$cookieStore = $cookieStore;
-    this.dao = appConfig.apiService.mock ? apiMockDao : apiDao;
   }
 
   //Auth API
@@ -24,5 +20,5 @@ class ApiService {
 }
 
 export default angular
-  .module('common.services.ApiService', [apiDaoModule.name, apiMockDaoModule.name])
+  .module('common.services.ApiService', [])
   .service('ApiService', ApiService);

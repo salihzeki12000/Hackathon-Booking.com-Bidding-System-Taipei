@@ -3,10 +3,7 @@ import mappingData from '../../common/mockData/mapping.json!';
 export default class OpenHotelDialogController {
 
   /*@ngInject*/
-  constructor($scope, $log, $auth, $http,
-              DeviceService, ListenrService, ToastrService, $state, moment) {
-    this.deviceService = DeviceService;
-    this.listenrService = ListenrService;
+  constructor($scope, $log, $auth, $http, ToastrService, $state, moment) {
     this.toastrService = ToastrService;
     this.$scope = $scope;
     this.$auth = $auth;

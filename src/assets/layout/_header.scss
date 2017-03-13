@@ -1,43 +1,12 @@
 .navbar {
-  margin-bottom: 0 !important;
-
-  &-toogle {
-    border-color: gray !important;
-  }
-
-  &-focus {
-    color: #3FB7EA !important;
-    border-bottom-style: solid;
-  }
-
   &-brand-logo {
     max-width: 160px;
     max-height: 100px;
     margin-top: -34px;
   }
-}
 
-.icon-bar {
-  background-color: gray;
-}
-
-/*.navbar-default .navbar-nav > li > a:active,
-.navbar-default .navbar-nav > li > a:focus{
-  background-color: #B0B0B0;
-  color: #3FB7EA !important;
-  border-bottom-style: solid;
-}*/
-
-.navbar-biiding {
-  background-color: #003580;
-  border-radius: 0 !important;
-}
-
-.freeTrial {
-  color: #791E94 !important;
-}
-
-.report-wizzard-icon {
-  width:23px;
-  height:23px;
+  &-biiding {
+    background-color: #003580;
+    border-radius: 0 !important;
+  }
 }

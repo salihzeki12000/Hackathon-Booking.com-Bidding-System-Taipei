@@ -1,9 +1,7 @@
 export default class DialogController {
 
   /*@ngInject*/
-  constructor($scope, $log, ChildService, ListenrService, ToastrService) {
-    this.childService = ChildService;
-    this.listenrService = ListenrService;
+  constructor($scope, $log, ToastrService) {
     this.toastrService = ToastrService;
     this.$scope = $scope;
     $log.debug(this.$scope.ngDialogData);
