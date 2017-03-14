@@ -43,7 +43,7 @@ app.config(['$urlRouterProvider', '$locationProvider', '$compileProvider', '$log
     requireBase: false,
   });
   $httpProvider.useApplyAsync(true);
-  $urlRouterProvider.otherwise('/children');
+  $urlRouterProvider.otherwise('/home');
 
   if (window.prod) {
     // http://ng-perf.com/2014/10/24/simple-trick-to-speed-up-your-angularjs-app-load-time/
